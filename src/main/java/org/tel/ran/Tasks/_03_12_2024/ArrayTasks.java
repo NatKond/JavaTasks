@@ -139,6 +139,7 @@ public class ArrayTasks {
         for (int i = 0; i < array.length; i++) {
             if (array[i] == target) {
                 containsTarget = true;
+                break;
             }
         }
         System.out.println("containsTarget = " + containsTarget);
@@ -229,12 +230,20 @@ public class ArrayTasks {
     public static void task15() {
         int[] array = {1, 2, 3, 4};
         System.out.println("array = " + Arrays.toString(array));
-
+        //Первый вариант с дополнительным массивом
         int[] reverse = new int[array.length];
 
         for (int i = 0; i < array.length; i++) {
             reverse[(array.length - 1) - i] = array[i];
         }
         System.out.println("reverse = " + Arrays.toString(reverse));
+
+        //Второй вариант без дополнительного массива
+        for (int i = 0; i < array.length/2; i++) {
+            int temp = array[(array.length - 1) - i];
+            array[(array.length - 1) - i] = array[i];
+            array [i] =temp;
+        }
+        System.out.println("array = " + Arrays.toString(array));
     }
 }
