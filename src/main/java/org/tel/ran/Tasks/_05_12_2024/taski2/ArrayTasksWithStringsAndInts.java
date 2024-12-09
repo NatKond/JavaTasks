@@ -238,7 +238,7 @@ public class ArrayTasksWithStringsAndInts {
                 }
             }
         }
-        System.out.println("listFirstLetters = " + listUniqueLetters);
+        System.out.println("listUniqueLetters = " + listUniqueLetters);
 
     }
 }
