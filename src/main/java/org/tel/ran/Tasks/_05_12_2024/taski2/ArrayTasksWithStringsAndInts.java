@@ -231,6 +231,7 @@ public class ArrayTasksWithStringsAndInts {
                 for (int l = 0; l < listUniqueLetters.size(); l++) {
                     if (array[i].charAt(j) == listUniqueLetters.get(l).charAt(0)) {
                         isUnique = false;
+                        break;
                     }
                 }
                 if (isUnique) {
@@ -239,6 +240,5 @@ public class ArrayTasksWithStringsAndInts {
             }
         }
         System.out.println("listUniqueLetters = " + listUniqueLetters);
-
     }
 }

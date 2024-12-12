@@ -97,40 +97,22 @@ public class ArrayTasksWithStringsAndIntsB {
 
     // 15. Найти уникальные значения в массиве строк.
     public static void task15() {
-        String[] array = {"apple", "banana", "apple", "cherry", "banana"};
+        String[] array = {"apple", "banana", "apple", "cherry", "banana","kiwi"};
         System.out.println("array = " + Arrays.toString(array));
         //Первый вариант решения без использования ArrayList
         boolean isUnique = true;
-        int countUnique = 0;
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array.length; j++) {
                 if (i != j && array[i].equals(array[j])){
-                    isUnique =false;
+                    isUnique = false;
                     break;
                 }
             }
             if (isUnique) {
-                countUnique++;
+                System.out.println("array[" + i + "] = " + array[i] + " is unique");
             }
             isUnique = true;
         }
-
-        String[] arrayOfUniques = new String[countUnique];
-        int k = 0;
-        for (int i = 0; i < array.length; i++) {
-            isUnique = true;
-            for (int j = 0; j < array.length; j++) {
-                if (i !=j && array[i].equals(array[j])){
-                isUnique = false;
-                break;
-                }
-            }
-            if (isUnique) {
-                arrayOfUniques[k]=array[i];
-                k++;
-            }
-        }
-        System.out.println("arrayOfUniques = " + Arrays.toString(arrayOfUniques));
 
         //Второй вариант решения с ArrayList
         ArrayList<String> listOfUniques = new ArrayList<>();
@@ -155,48 +137,49 @@ public class ArrayTasksWithStringsAndIntsB {
         System.out.println("array = " + Arrays.toString(array));
 
         //Первый вариант решения без использования ArrayList
-        boolean isUnique = true;
+        boolean isDublicate = false;
         int countUnique = 0;
         for (int i = 0; i < array.length; i++) {
             for (int j = i - 1; j >= 0; j--) {
                 if (array[i].equals(array[j])){
-                    isUnique =false;
+                    isDublicate = true;
                     break;
                 }
             }
-            if (isUnique) {
+            if (!isDublicate) {
                 countUnique++;
             }
-            isUnique = true;
+            isDublicate = false;
         }
         String[] arrayWithoutDublicates = new String[countUnique];
         int k = 0;
         for (int i = 0; i < array.length; i++) {
-            isUnique = true;
+            isDublicate = false;
             for (int j = i - 1; j >= 0; j--) {
                 if (array[i].equals(array[j])){
-                    isUnique =false;
+                    isDublicate = true;
                     break;
                 }
             }
-            if (isUnique) {
+            if (!isDublicate) {
             arrayWithoutDublicates[k] = array[i];
             k++;
             }
         }
+
         System.out.println("arrayWithoutDublicates = " + Arrays.toString(arrayWithoutDublicates));
 
         //Второй вариант решения с ArrayList
         ArrayList<String> listWithoutDublicates = new ArrayList<>();
         for (int i = 0; i < array.length; i++) {
-            isUnique = true;
+            isDublicate = false;
             for (int j = 0; j < listWithoutDublicates.size(); j++) {
                 if (array[i].equals(listWithoutDublicates.get(j))){
-                    isUnique =false;
+                    isDublicate = true;
                     break;
                 }
             }
-            if (isUnique) {
+            if (!isDublicate) {
                 listWithoutDublicates.add(array[i]);
             }
 
