@@ -56,24 +56,21 @@ public class Company {
 
     public Employee getMaxSalaryEmployee(){
         Employee maxSalaryEmployee = this.getDepartments()[0].getEmployees()[0];
-        for (int i = 0; i < this.getDepartments().length; i++) {
-            Department currentDepartment = this.getDepartments()[i];
-            for (int j = 0; j < currentDepartment.getEmployees().length; j++) {
-            Employee currentEmployee = currentDepartment.getEmployees()[j];
-            if (currentEmployee.getSalary() > maxSalaryEmployee.getSalary()) {
-                maxSalaryEmployee = currentEmployee;
+        for (Department currentDepartment: this.getDepartments()){
+            for (Employee currentEmployee: currentDepartment.getEmployees()){
+                if (currentEmployee.getSalary() > maxSalaryEmployee.getSalary()){
+                    maxSalaryEmployee = currentEmployee;
                 }
             }
         }
+
         return maxSalaryEmployee;
     }
 
     public void compareSalaryToEmployees(Employee employee){
-        for (int i = 0; i < this.getDepartments().length; i++) {
-            Department currentDepartment = this.getDepartments()[i];
-            for (int j = 0; j < currentDepartment.getEmployees().length; j++) {
-                Employee currentEmployee = currentDepartment.getEmployees()[j];
-                if (currentEmployee.getSalary() > employee.getSalary()) {
+        for (Department currentDepartment: this.getDepartments()){
+            for (Employee currentEmployee: currentDepartment.getEmployees()){
+                if (currentEmployee.getSalary() > employee.getSalary()){
                     System.out.println("Employee = " + currentEmployee + " in " + this.getName() + " salary is higher than that of the selected employee.");
                 }
             }
