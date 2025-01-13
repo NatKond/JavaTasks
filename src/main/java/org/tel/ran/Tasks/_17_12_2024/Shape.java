@@ -1,10 +1,10 @@
 package org.tel.ran.Tasks._17_12_2024;
 
-public class Figure {
+public class Shape {
     private int width;
     private double area;
 
-    public Figure(int width) {
+    public Shape(int width) {
         this.width = width;
     }
     public int getWidth() {

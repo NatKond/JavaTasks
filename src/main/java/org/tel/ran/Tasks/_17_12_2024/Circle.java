@@ -1,6 +1,6 @@
 package org.tel.ran.Tasks._17_12_2024;
 
-public class Circle extends Figure {
+public class Circle extends Shape {
     private int radius;
 
     public Circle(int width) {

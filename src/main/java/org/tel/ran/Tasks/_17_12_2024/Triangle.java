@@ -1,6 +1,6 @@
 package org.tel.ran.Tasks._17_12_2024;
 
-public class Triangle extends Figure {
+public class Triangle extends Shape {
     private int side2;
     private int side3;
     private int height;
